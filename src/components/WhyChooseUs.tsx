@@ -6,7 +6,8 @@ import {
   Users, 
   Lock,
   Shield,
-  Code
+  Code,
+  Clock
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -40,6 +41,25 @@ const features = [
     icon: <Lock className="h-10 w-10 p-2 text-neon-teal" />,
     title: "Seamless Integration",
     description: "Our solutions integrate smoothly with your existing systems, minimizing disruption to your operations."
+  }
+];
+
+const timeMetrics = [
+  {
+    metric: "78%",
+    description: "Reduction in repetitive tasks"
+  },
+  {
+    metric: "15x",
+    description: "Faster data processing"
+  },
+  {
+    metric: "60+",
+    description: "Hours saved weekly per team"
+  },
+  {
+    metric: "3.5x",
+    description: "ROI within first year"
   }
 ];
 
@@ -115,6 +135,79 @@ const WhyChooseUs = () => {
             ))}
           </div>
         </div>
+        
+        {/* Time Savings Section */}
+        <motion.div 
+          className="mt-24 pt-16 border-t border-white/10"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-center mb-16">
+            <span className="px-3 py-1 text-xs rounded-full bg-white/5 border border-white/10 text-white/70 inline-block mb-4">
+              Business Impact
+            </span>
+            <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6">
+              <span className="text-gradient-blue-purple">Time is Money</span> - We Save You Both
+            </h2>
+            <p className="text-white/70 max-w-3xl mx-auto">
+              Our AI solutions don't just improve efficiency—they transform how your business operates. 
+              By automating repetitive tasks and accelerating complex processes, we free your team to focus on 
+              what truly matters: innovation, strategy, and growth.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {timeMetrics.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="glass-card rounded-xl p-8 text-center"
+              >
+                <div className="flex justify-center mb-4">
+                  <Clock className="h-10 w-10 text-neon-blue" />
+                </div>
+                <div className="text-3xl md:text-4xl font-bold text-gradient-blue-purple mb-2">
+                  {item.metric}
+                </div>
+                <p className="text-white/70">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+          
+          <div className="mt-16 bg-black/40 border border-white/10 backdrop-blur-md rounded-xl p-8">
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              <div className="md:w-2/3">
+                <h3 className="text-2xl font-semibold text-white mb-4">
+                  Real Results from Real Clients
+                </h3>
+                <p className="text-white/70 mb-4">
+                  "HYPER THOUGHT AI's solution reduced our data processing time by 94%, allowing our analysts to focus on strategic initiatives rather than data preparation. This shift alone increased our team's productivity by 70% and accelerated our time-to-market by months."
+                </p>
+                <div className="flex items-center">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple flex items-center justify-center text-white font-semibold">
+                    CK
+                  </div>
+                  <div className="ml-3">
+                    <div className="text-white font-medium">Christine Keller</div>
+                    <div className="text-white/60 text-sm">CTO, TechForward Solutions</div>
+                  </div>
+                </div>
+              </div>
+              <div className="md:w-1/3 flex justify-center">
+                <Button className="btn-primary">
+                  Read Full Case Study
+                </Button>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
