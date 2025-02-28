@@ -112,6 +112,27 @@
   .text-shadow-purple {
     text-shadow: 0 0 20px rgba(157, 80, 255, 0.5);
   }
+  
+  .bg-size-200 {
+    background-size: 200% auto;
+  }
+  
+  .bg-pos-0 {
+    background-position: 0% center;
+  }
+  
+  .bg-pos-100 {
+    background-position: 100% center;
+  }
+  
+  /* Add hover variants */
+  .hover\:bg-pos-0:hover {
+    background-position: 0% center;
+  }
+  
+  .hover\:bg-pos-100:hover {
+    background-position: 100% center;
+  }
 }
 
 /* Custom styles for buttons */
@@ -123,19 +144,6 @@
 .btn-outline {
   @apply relative overflow-hidden inline-flex items-center justify-center px-6 py-3 rounded-md font-medium transition-all duration-300
   bg-transparent border border-white/20 hover:border-white/40 text-white hover:shadow-md;
-}
-
-/* Background animation classes */
-.bg-size-200 {
-  background-size: 200% auto;
-}
-
-.bg-pos-0 {
-  background-position: 0% center;
-}
-
-.bg-pos-100 {
-  background-position: 100% center;
 }
 
 /* Custom link effect */

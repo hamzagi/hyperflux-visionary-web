@@ -59,14 +59,10 @@ const BlogSection = () => {
             </p>
           </div>
           
-          <Button 
-            className="mt-6 md:mt-0 btn-outline"
-            as={Link} 
-            to="/blog"
-          >
+          <Link to="/blog" className="mt-6 md:mt-0 btn-outline inline-flex items-center justify-center">
             View All Articles
             <ArrowRight size={16} className="ml-2" />
-          </Button>
+          </Link>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
