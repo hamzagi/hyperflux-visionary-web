@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, Brain } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +33,9 @@ const Navbar = () => {
           <Link to="/" className="flex items-center space-x-2" onClick={closeMenu}>
             <div className="relative w-8 h-8">
               <div className="absolute inset-0 bg-neon-blue rounded-full opacity-70 blur-sm animate-pulse-slow"></div>
-              <div className="absolute inset-0 flex items-center justify-center text-white font-bold">H</div>
+              <div className="absolute inset-0 flex items-center justify-center text-white">
+                <Brain size={20} className="text-white" />
+              </div>
             </div>
             <span className="text-xl font-semibold tracking-tight text-white">
               HYPER<span className="text-neon-blue">THOUGHT</span>
