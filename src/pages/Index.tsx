@@ -10,6 +10,7 @@ import ContactForm from '@/components/ContactForm';
 import BlogSection from '@/components/BlogSection';
 import CallToAction from '@/components/CallToAction';
 import Footer from '@/components/Footer';
+import BigHeading from '@/components/BigHeading';
 
 const HomePage = () => {
   useEffect(() => {
@@ -29,10 +30,15 @@ const HomePage = () => {
         <Navbar />
         <main>
           <HeroSection />
+          <BigHeading text="Skip the Grunt Work – Focus on What Matters" />
           <HowItWorks />
+          <BigHeading text="Get a Day's Work Done Even Before Your Coffee Cools" />
           <WhyChooseUs />
+          <BigHeading text="Automate the mundane. Accelerate the extraordinary." />
           <CaseStudies />
+          <BigHeading text="Skip the Grunt Work – Focus on What Matters" />
           <BlogSection />
+          <BigHeading text="Get a Day's Work Done Even Before Your Coffee Cools" />
           <ContactForm />
           <CallToAction />
         </main>
