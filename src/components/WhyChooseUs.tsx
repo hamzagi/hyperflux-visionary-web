@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { 
   Zap, 
@@ -69,6 +68,22 @@ const WhyChooseUs = () => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 right-0 w-80 h-80 bg-neon-blue/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-20 w-72 h-72 bg-neon-purple/5 rounded-full blur-3xl"></div>
+        
+        <div className="absolute inset-0 z-0 opacity-20">
+          <img 
+            src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmRuamNnNjRzdmg3ZXpzcmUyeGc1dHl5eTV6cmFqcGRra21qNGIwOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKIPEqDGUULpEU0aQ/giphy.gif" 
+            alt="Neural Network Background" 
+            className="absolute top-0 left-0 w-full h-full object-cover"
+          />
+        </div>
+        
+        <div className="absolute top-1/4 left-1/3 w-full h-full opacity-30">
+          <img 
+            src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGxrYm52bWYwczY0dnhjbDVyc2Jyend2azVtbGxkYnEzZ3VrZmV2diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0IylSajlbPRFxH8Y/giphy.gif" 
+            alt="Neural Network Nodes" 
+            className="w-full h-full object-contain"
+          />
+        </div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
@@ -136,7 +151,6 @@ const WhyChooseUs = () => {
           </div>
         </div>
         
-        {/* Time Savings Section */}
         <motion.div 
           className="mt-24 pt-16 border-t border-white/10"
           initial={{ opacity: 0 }}
@@ -179,33 +193,6 @@ const WhyChooseUs = () => {
                 </p>
               </motion.div>
             ))}
-          </div>
-          
-          <div className="mt-16 bg-black/40 border border-white/10 backdrop-blur-md rounded-xl p-8">
-            <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className="md:w-2/3">
-                <h3 className="text-2xl font-semibold text-white mb-4">
-                  Real Results from Real Clients
-                </h3>
-                <p className="text-white/70 mb-4">
-                  "HYPER THOUGHT AI's solution reduced our data processing time by 94%, allowing our analysts to focus on strategic initiatives rather than data preparation. This shift alone increased our team's productivity by 70% and accelerated our time-to-market by months."
-                </p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple flex items-center justify-center text-white font-semibold">
-                    CK
-                  </div>
-                  <div className="ml-3">
-                    <div className="text-white font-medium">Christine Keller</div>
-                    <div className="text-white/60 text-sm">CTO, TechForward Solutions</div>
-                  </div>
-                </div>
-              </div>
-              <div className="md:w-1/3 flex justify-center">
-                <Button className="btn-primary">
-                  Read Full Case Study
-                </Button>
-              </div>
-            </div>
           </div>
         </motion.div>
       </div>
