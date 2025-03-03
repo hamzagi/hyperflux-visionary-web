@@ -67,6 +67,7 @@ const Navbar = () => {
           <div className="hidden md:block">
             <Button 
               className="btn-primary"
+              onClick={() => window.open('https://calendly.com/hyperthoughtai', '_blank')}
             >
               Book Consultation
             </Button>
@@ -134,7 +135,10 @@ const Navbar = () => {
           </Link>
           <Button 
             className="w-full btn-primary mt-4"
-            onClick={closeMenu}
+            onClick={() => {
+              closeMenu();
+              window.open('https://calendly.com/hyperthoughtai', '_blank');
+            }}
           >
             Book Consultation
           </Button>

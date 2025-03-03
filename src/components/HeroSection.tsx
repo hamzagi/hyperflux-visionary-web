@@ -85,7 +85,10 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <Button className="btn-primary text-base px-8 py-6">
+            <Button 
+              className="btn-primary text-base px-8 py-6"
+              onClick={() => window.open('https://calendly.com/hyperthoughtai', '_blank')}
+            >
               Book Consultation
               <ArrowRight size={18} className="ml-2" />
             </Button>

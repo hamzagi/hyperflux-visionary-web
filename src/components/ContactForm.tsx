@@ -167,7 +167,7 @@ const ContactForm = () => {
                 <Button 
                   type="button" 
                   className="btn-outline flex-1"
-                  onClick={() => window.open('#', '_blank')}
+                  onClick={() => window.open('https://calendly.com/hyperthoughtai', '_blank')}
                 >
                   <Calendar size={16} className="mr-2" />
                   Book Consultation
