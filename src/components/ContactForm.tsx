@@ -7,11 +7,9 @@ import { Textarea } from '@/components/ui/textarea';
 import { 
   Send, 
   Calendar, 
-  Users, 
   MapPin,
   Phone,
   Mail,
-  Check,
 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
@@ -221,37 +219,6 @@ const ContactForm = () => {
                   </div>
                 </div>
               </div>
-            </div>
-            
-            <div className="glass-card rounded-xl p-6">
-              <h3 className="text-xl font-medium text-white mb-4">Business Hours</h3>
-              <div className="space-y-2">
-                <div className="flex justify-between text-sm">
-                  <span className="text-white/70">Monday - Friday:</span>
-                  <span className="text-white">9:00 AM - 6:00 PM</span>
-                </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-white/70">Saturday:</span>
-                  <span className="text-white">10:00 AM - 4:00 PM</span>
-                </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-white/70">Sunday:</span>
-                  <span className="text-white">Closed</span>
-                </div>
-              </div>
-            </div>
-            
-            <div className="glass-card rounded-xl p-6">
-              <div className="flex items-center mb-4">
-                <Users size={20} className="text-neon-blue mr-3" />
-                <h3 className="text-lg font-medium text-white">Looking for a career?</h3>
-              </div>
-              <p className="text-white/70 text-sm mb-4">
-                Join our team of AI innovators and shape the future of technology.
-              </p>
-              <Button variant="outline" className="w-full">
-                View Open Positions
-              </Button>
             </div>
           </motion.div>
         </div>
