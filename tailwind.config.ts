@@ -68,9 +68,9 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				neon: {
-					blue: '#4FACFE',
+					blue: '#1EAEDB',
 					purple: '#9D50FF',
-					teal: '#00F5FF',
+					teal: '#33C3F0',
 				}
 			},
 			borderRadius: {
@@ -151,11 +151,11 @@ export default {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
 				'hero-pattern': 'url("/images/grid.svg")',
-				'neon-glow': 'linear-gradient(90deg, #4FACFE 0%, #9D50FF 100%)',
-				'blue-purple-gradient': 'linear-gradient(90deg, #4FACFE 0%, #9D50FF 100%)',
+				'neon-glow': 'linear-gradient(90deg, #1EAEDB 0%, #9D50FF 100%)',
+				'blue-purple-gradient': 'linear-gradient(90deg, #1EAEDB 0%, #9D50FF 100%)',
 			},
 			boxShadow: {
-				'neon-blue': '0 0 10px 0 rgba(79, 172, 254, 0.5), 0 0 20px 0 rgba(79, 172, 254, 0.3)',
+				'neon-blue': '0 0 10px 0 rgba(30, 174, 219, 0.5), 0 0 20px 0 rgba(30, 174, 219, 0.3)',
 				'neon-purple': '0 0 10px 0 rgba(157, 80, 255, 0.5), 0 0 20px 0 rgba(157, 80, 255, 0.3)',
 				'glass': '0 8px 32px rgba(0, 0, 0, 0.15)',
 				'glass-intense': '0 10px 30px rgba(0, 0, 0, 0.25)',

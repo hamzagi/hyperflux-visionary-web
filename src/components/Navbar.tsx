@@ -24,42 +24,42 @@ const Navbar = () => {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
-          ? 'py-3 glass-morphism shadow-md' 
-          : 'py-5 bg-transparent'
+          ? 'py-2 bg-background shadow-md' 
+          : 'py-3 bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2" onClick={closeMenu}>
             <div className="relative w-8 h-8">
-              <div className="absolute inset-0 bg-neon-blue rounded-full opacity-70 blur-sm animate-pulse-slow"></div>
-              <div className="absolute inset-0 flex items-center justify-center text-white">
-                <Brain size={20} className="text-white" />
+              <div className="absolute inset-0 bg-primary rounded-full opacity-70 blur-sm animate-pulse-slow"></div>
+              <div className="absolute inset-0 flex items-center justify-center text-black">
+                <Brain size={20} className="text-black" />
               </div>
             </div>
             <span className="text-xl font-semibold tracking-tight text-white">
-              HYPER<span className="text-neon-blue">THOUGHT</span>
+              HYPER<span className="text-primary">THOUGHT</span>
             </span>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-sm text-white/90 hover:text-white transition-colors link-underline">
+            <Link to="/" className="text-sm text-white/90 hover:text-white transition-colors">
               Home
             </Link>
-            <Link to="/how-it-works" className="text-sm text-white/90 hover:text-white transition-colors link-underline">
+            <Link to="/how-it-works" className="text-sm text-white/90 hover:text-white transition-colors">
               How It Works
             </Link>
-            <Link to="/why-us" className="text-sm text-white/90 hover:text-white transition-colors link-underline">
+            <Link to="/why-us" className="text-sm text-white/90 hover:text-white transition-colors">
               Why Choose Us
             </Link>
-            <Link to="/case-studies" className="text-sm text-white/90 hover:text-white transition-colors link-underline">
+            <Link to="/case-studies" className="text-sm text-white/90 hover:text-white transition-colors">
               Case Studies
             </Link>
-            <Link to="/blog" className="text-sm text-white/90 hover:text-white transition-colors link-underline">
+            <Link to="/blog" className="text-sm text-white/90 hover:text-white transition-colors">
               Blog
             </Link>
-            <Link to="/contact" className="text-sm text-white/90 hover:text-white transition-colors link-underline">
+            <Link to="/contact" className="text-sm text-white/90 hover:text-white transition-colors">
               Contact
             </Link>
           </nav>
@@ -86,49 +86,49 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <div 
-        className={`md:hidden absolute w-full bg-black/90 backdrop-blur-lg transform transition-transform duration-300 ease-in-out ${
+        className={`md:hidden absolute w-full bg-background backdrop-blur-lg transform transition-transform duration-300 ease-in-out ${
           isOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
         }`}
       >
         <div className="container mx-auto px-4 py-6 space-y-4">
           <Link 
             to="/"
-            className="block text-white py-2 hover:text-neon-blue transition-colors"
+            className="block text-white py-2 hover:text-primary transition-colors"
             onClick={closeMenu}
           >
             Home
           </Link>
           <Link 
             to="/how-it-works"
-            className="block text-white py-2 hover:text-neon-blue transition-colors"
+            className="block text-white py-2 hover:text-primary transition-colors"
             onClick={closeMenu}
           >
             How It Works
           </Link>
           <Link 
             to="/why-us"
-            className="block text-white py-2 hover:text-neon-blue transition-colors"
+            className="block text-white py-2 hover:text-primary transition-colors"
             onClick={closeMenu}
           >
             Why Choose Us
           </Link>
           <Link 
             to="/case-studies"
-            className="block text-white py-2 hover:text-neon-blue transition-colors"
+            className="block text-white py-2 hover:text-primary transition-colors"
             onClick={closeMenu}
           >
             Case Studies
           </Link>
           <Link 
             to="/blog"
-            className="block text-white py-2 hover:text-neon-blue transition-colors"
+            className="block text-white py-2 hover:text-primary transition-colors"
             onClick={closeMenu}
           >
             Blog
           </Link>
           <Link 
             to="/contact"
-            className="block text-white py-2 hover:text-neon-blue transition-colors"
+            className="block text-white py-2 hover:text-primary transition-colors"
             onClick={closeMenu}
           >
             Contact

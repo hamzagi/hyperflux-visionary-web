@@ -25,17 +25,17 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center pt-28 pb-20 overflow-hidden">
       {/* Background animated elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-neon-blue/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-purple/10 rounded-full blur-3xl animate-float animate-delay-300"></div>
+        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-float animate-delay-300"></div>
         
         {/* Grid pattern */}
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         
         {/* Circuit-like lines */}
         <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <path d="M0,0 L100,100" stroke="rgba(79, 172, 254, 0.2)" strokeWidth="0.1" />
+          <path d="M0,0 L100,100" stroke="rgba(30, 174, 219, 0.2)" strokeWidth="0.1" />
           <path d="M100,0 L0,100" stroke="rgba(157, 80, 255, 0.2)" strokeWidth="0.1" />
-          <path d="M50,0 L50,100" stroke="rgba(79, 172, 254, 0.2)" strokeWidth="0.1" />
+          <path d="M50,0 L50,100" stroke="rgba(30, 174, 219, 0.2)" strokeWidth="0.1" />
           <path d="M0,50 L100,50" stroke="rgba(157, 80, 255, 0.2)" strokeWidth="0.1" />
         </svg>
       </div>
@@ -48,7 +48,7 @@ const HeroSection = () => {
             transition={{ duration: 0.5 }}
             className="mb-6"
           >
-            <span className="inline-flex items-center px-3 py-1 text-xs rounded-full bg-white/10 border border-white/10 text-neon-blue">
+            <span className="inline-flex items-center px-3 py-1 text-xs rounded-full bg-white/10 border border-white/10 text-primary">
               <BrainCircuit size={14} className="mr-2" />
               Next-Gen AI Solutions
             </span>
@@ -61,9 +61,9 @@ const HeroSection = () => {
             className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-white leading-tight mb-6"
           >
             Revolutionize Your Business with{' '}
-            <span className="relative inline-block">
-              <span className="text-gradient-blue-purple">AI-Powered</span>
-              <div className="absolute -inset-1 bg-blue-purple-gradient opacity-20 blur-lg rounded-lg -z-10"></div>
+            <span className="relative inline-block text-primary">
+              AI-Powered
+              <div className="absolute -inset-1 bg-primary opacity-20 blur-lg rounded-lg -z-10"></div>
             </span>{' '}
             Solutions
           </motion.h1>
@@ -86,13 +86,13 @@ const HeroSection = () => {
             className="flex flex-col sm:flex-row gap-4"
           >
             <Button 
-              className="btn-primary text-base px-8 py-6"
+              className="btn-primary text-base px-8 py-3"
               onClick={() => window.open('https://calendly.com/hyperthoughtai', '_blank')}
             >
               Book Consultation
               <ArrowRight size={18} className="ml-2" />
             </Button>
-            <Button className="btn-outline text-base px-8 py-6">
+            <Button className="btn-secondary text-base px-8 py-3">
               Explore Solutions
             </Button>
           </motion.div>

@@ -7,42 +7,42 @@
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
+    --background: 210 10% 10%;
     --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
+    --card: 210 10% 10%;
     --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
+    --popover: 210 10% 10%;
     --popover-foreground: 0 0% 98%;
-    --primary: 205 100% 75%;
-    --primary-foreground: 240 5.9% 10%;
+    --primary: 200 100% 55%;
+    --primary-foreground: 210 10% 10%;
     --secondary: 270 90% 65%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
+    --muted: 210 10% 15%;
+    --muted-foreground: 210 5% 70%;
+    --accent: 210 10% 15%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-    --radius: 0.5rem;
+    --border: 210 10% 20%;
+    --input: 210 10% 20%;
+    --ring: 210 10% 70%;
+    --radius: 0.25rem;
   }
 }
 
 @layer base {
   * {
-    @apply border-border selection:bg-white/10 selection:text-white;
+    @apply border-border selection:bg-primary/20 selection:text-white;
   }
   
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
-    background-color: hsl(240, 10%, 3.9%);
+    background-color: hsl(210, 10%, 10%);
     background-image: 
-      radial-gradient(at 40% 20%, hsla(205, 100%, 75%, 0.05) 0px, transparent 50%),
+      radial-gradient(at 40% 20%, hsla(200, 100%, 55%, 0.05) 0px, transparent 50%),
       radial-gradient(at 80% 50%, hsla(270, 90%, 65%, 0.05) 0px, transparent 50%),
-      radial-gradient(at 20% 80%, hsla(225, 100%, 70%, 0.05) 0px, transparent 50%);
+      radial-gradient(at 20% 80%, hsla(200, 100%, 55%, 0.05) 0px, transparent 50%);
     background-attachment: fixed;
   }
 
@@ -61,19 +61,19 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    @apply bg-gradient-to-b from-neon-blue to-neon-purple rounded-full;
+    @apply bg-gradient-to-b from-primary to-secondary rounded-full;
     border: 2px solid transparent;
     background-clip: padding-box;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-gradient-to-b from-neon-blue/80 to-neon-purple/80;
+    @apply bg-gradient-to-b from-primary/80 to-secondary/80;
   }
   
   /* Firefox scrollbar */
   * {
     scrollbar-width: thin;
-    scrollbar-color: #9D50FF #0F0F13;
+    scrollbar-color: #1EAEDB #0F0F13;
   }
 }
 
@@ -91,11 +91,11 @@
   }
   
   .neon-border-blue {
-    @apply border border-neon-blue/50 shadow-neon-blue;
+    @apply border border-primary/50 shadow-neon-blue;
   }
   
   .neon-border-purple {
-    @apply border border-neon-purple/50 shadow-neon-purple;
+    @apply border border-secondary/50 shadow-neon-purple;
   }
   
   .animate-delay-100 {
@@ -132,7 +132,7 @@
   }
   
   .text-shadow {
-    text-shadow: 0 0 20px rgba(79, 172, 254, 0.5);
+    text-shadow: 0 0 20px rgba(30, 174, 219, 0.5);
   }
   
   .text-shadow-purple {
@@ -163,13 +163,19 @@
 
 /* Custom styles for buttons */
 .btn-primary {
-  @apply relative overflow-hidden inline-flex items-center justify-center px-6 py-3 rounded-md font-medium transition-all duration-300 
-  bg-gradient-to-r from-neon-blue to-neon-purple bg-size-200 bg-pos-0 hover:bg-pos-100 text-white shadow-md;
+  @apply relative overflow-hidden inline-flex items-center justify-center px-6 py-2 rounded-md font-medium transition-all duration-300 
+  bg-primary hover:bg-primary/90 text-black shadow-md;
 }
 
 .btn-outline {
-  @apply relative overflow-hidden inline-flex items-center justify-center px-6 py-3 rounded-md font-medium transition-all duration-300
+  @apply relative overflow-hidden inline-flex items-center justify-center px-6 py-2 rounded-md font-medium transition-all duration-300
   bg-transparent border border-white/20 hover:border-white/40 text-white hover:shadow-md;
+}
+
+/* AWS-style secondary button */
+.btn-secondary {
+  @apply relative overflow-hidden inline-flex items-center justify-center px-6 py-2 rounded-md font-medium transition-all duration-300
+  bg-muted hover:bg-muted/90 text-white shadow-md;
 }
 
 /* Custom link effect */
@@ -185,7 +191,7 @@
   height: 1px;
   bottom: -2px;
   left: 0;
-  background: linear-gradient(90deg, #4FACFE 0%, #9D50FF 100%);
+  background: linear-gradient(90deg, #1EAEDB 0%, #9D50FF 100%);
   transform-origin: bottom right;
   transition: transform 0.3s ease-out;
 }
