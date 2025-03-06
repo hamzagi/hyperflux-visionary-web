@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -158,6 +157,45 @@
   
   .hover\:bg-pos-100:hover {
     background-position: 100% center;
+  }
+  
+  /* Perspective utilities for 3D transforms */
+  .perspective-400 {
+    perspective: 400px;
+  }
+  
+  .perspective-800 {
+    perspective: 800px;
+  }
+  
+  .perspective-1200 {
+    perspective: 1200px;
+  }
+  
+  /* Transform utilities */
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+  
+  /* Hover effect utilities */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300;
+  }
+  
+  .hover-glow:hover {
+    box-shadow: 0 0 15px theme('colors.primary.DEFAULT');
+  }
+  
+  .hover-glow-purple:hover {
+    box-shadow: 0 0 15px theme('colors.secondary.DEFAULT');
   }
 }
 

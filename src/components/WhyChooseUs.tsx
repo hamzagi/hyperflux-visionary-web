@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { 
   Zap, 
@@ -64,6 +63,38 @@ const timeMetrics = [
 ];
 
 const WhyChooseUs = () => {
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+    hover: { 
+      scale: 1.05,
+      boxShadow: "0 10px 20px rgba(0,0,0,0.2)",
+      borderColor: "rgba(255,255,255,0.2)",
+      background: "rgba(0,0,0,0.5)",
+      transition: { 
+        type: "spring",
+        stiffness: 400,
+        damping: 10
+      }
+    }
+  };
+
+  const iconVariants = {
+    hidden: { scale: 0, rotate: -30 },
+    visible: { scale: 1, rotate: 0 },
+    hover: { 
+      scale: 1.2, 
+      rotate: [0, 5, -5, 0],
+      transition: {
+        rotate: {
+          repeat: Infinity,
+          repeatType: "reverse" as const,
+          duration: 1
+        }
+      }
+    }
+  };
+
   return (
     <section className="py-20 relative overflow-hidden" id="why-choose-us">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -85,7 +116,15 @@ const WhyChooseUs = () => {
               </span>
               <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6">
                 Why Leading Companies <br />
-                <span className="text-gradient-blue-purple">Choose Us</span>
+                <motion.span 
+                  className="text-gradient-blue-purple"
+                  initial={{ perspective: 800, rotateY: 90 }}
+                  whileInView={{ rotateY: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                  viewport={{ once: true }}
+                >
+                  Choose Us
+                </motion.span>
               </h2>
               <p className="text-white/70 mb-8">
                 At HYPER THOUGHT AI, we combine deep technical expertise with a profound understanding of business challenges to create AI solutions that deliver real value. Our approaches are innovative, our execution is flawless, and our support is unmatched.
@@ -116,15 +155,24 @@ const WhyChooseUs = () => {
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                whileHover="hover"
+                transition={{ 
+                  duration: 0.5, 
+                  delay: index * 0.1,
+                  type: "spring"
+                }}
                 viewport={{ once: true }}
-                className="glass-card rounded-xl p-6 hover:scale-105 transition-transform duration-300"
+                className="glass-card rounded-xl p-6 transition-all duration-300"
               >
-                <div className="bg-white/5 rounded-full w-14 h-14 flex items-center justify-center mb-4">
+                <motion.div 
+                  className="bg-white/5 rounded-full w-14 h-14 flex items-center justify-center mb-4"
+                  variants={iconVariants}
+                >
                   {feature.icon}
-                </div>
+                </motion.div>
                 <h3 className="text-lg font-medium text-white mb-2">
                   {feature.title}
                 </h3>
@@ -148,7 +196,15 @@ const WhyChooseUs = () => {
               Business Impact
             </span>
             <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6">
-              <span className="text-gradient-blue-purple">Time is Money</span> - We Save You Both
+              <motion.span 
+                className="text-gradient-blue-purple inline-block"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                Time is Money
+              </motion.span> - We Save You Both
             </h2>
             <p className="text-white/70 max-w-3xl mx-auto">
               Our AI solutions don't just improve efficiency—they transform how your business operates. 
@@ -161,18 +217,35 @@ const WhyChooseUs = () => {
             {timeMetrics.map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                whileHover={{ 
+                  scale: 1.05, 
+                  background: "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5))",
+                  boxShadow: "0 0 20px rgba(30, 174, 219, 0.2)"
+                }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="glass-card rounded-xl p-8 text-center"
               >
-                <div className="flex justify-center mb-4">
+                <motion.div 
+                  className="flex justify-center mb-4"
+                  whileHover={{ 
+                    rotate: 360,
+                    transition: { duration: 1, ease: "anticipate" }
+                  }}
+                >
                   <Clock className="h-10 w-10 text-neon-blue" />
-                </div>
-                <div className="text-3xl md:text-4xl font-bold text-gradient-blue-purple mb-2">
+                </motion.div>
+                <motion.div 
+                  className="text-3xl md:text-4xl font-bold text-gradient-blue-purple mb-2"
+                  initial={{ y: 20, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                  viewport={{ once: true }}
+                >
                   {item.metric}
-                </div>
+                </motion.div>
                 <p className="text-white/70">
                   {item.description}
                 </p>
