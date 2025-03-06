@@ -11,15 +11,6 @@ const BigHeading = ({ text }: BigHeadingProps) => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-neon-blue/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-neon-purple/5 rounded-full blur-3xl"></div>
-        
-        {/* Neural Network Animation Background */}
-        <div className="absolute inset-0 z-0 opacity-10">
-          <img 
-            src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMWdzMG1zaGdxZTRna2U3Z3JjNnk3OWtvbWxnemtueno0ODJydHUwdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT9IgzoKnwFNmISR8I/giphy.gif" 
-            alt="Neural Network Background" 
-            className="absolute top-0 left-0 w-full h-full object-cover"
-          />
-        </div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">

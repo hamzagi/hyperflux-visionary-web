@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { 
   Zap, 
@@ -68,22 +69,6 @@ const WhyChooseUs = () => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 right-0 w-80 h-80 bg-neon-blue/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-20 w-72 h-72 bg-neon-purple/5 rounded-full blur-3xl"></div>
-        
-        <div className="absolute inset-0 z-0 opacity-20">
-          <img 
-            src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmRuamNnNjRzdmg3ZXpzcmUyeGc1dHl5eTV6cmFqcGRra21qNGIwOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKIPEqDGUULpEU0aQ/giphy.gif" 
-            alt="Neural Network Background" 
-            className="absolute top-0 left-0 w-full h-full object-cover"
-          />
-        </div>
-        
-        <div className="absolute top-1/4 left-1/3 w-full h-full opacity-30">
-          <img 
-            src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGxrYm52bWYwczY0dnhjbDVyc2Jyend2azVtbGxkYnEzZ3VrZmV2diZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0IylSajlbPRFxH8Y/giphy.gif" 
-            alt="Neural Network Nodes" 
-            className="w-full h-full object-contain"
-          />
-        </div>
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
