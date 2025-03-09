@@ -1,7 +1,6 @@
-import { useState, useRef } from 'react';
+
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { ChevronRight, ChevronLeft } from 'lucide-react';
 
 const caseStudies = [
   {
@@ -41,15 +40,6 @@ const caseStudies = [
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
   },
   {
-    id: 5,
-    title: "Predictive Maintenance System",
-    client: "Manufacturing Industry Leader",
-    description: "Developed a machine learning system that predicts equipment failures before they occur, reducing downtime by 45% and maintenance costs by 30%.",
-    results: ["45% reduction in downtime", "30% decrease in maintenance costs", "ROI achieved in 6 months"],
-    category: "Manufacturing",
-    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80",
-  },
-  {
     id: 6,
     title: "Computer Vision for Quality Control",
     client: "Automotive Parts Manufacturer",
@@ -67,36 +57,18 @@ const caseStudies = [
     category: "Education",
     image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80",
   },
+  {
+    id: 8,
+    title: "Cold Calling AI Agent",
+    client: "SaaS Sales Company",
+    description: "Developed an AI agent that automatically calls prospects based on website inquiries, qualifying leads and scheduling demos with sales representatives.",
+    results: ["65% increase in qualified leads", "42% reduction in sales cycle", "3x more demos scheduled per day"],
+    category: "Sales",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
+  },
 ];
 
 const CaseStudies = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  
-  const nextSlide = () => {
-    if (currentIndex < caseStudies.length - 1) {
-      setCurrentIndex(currentIndex + 1);
-      scrollToCard(currentIndex + 1);
-    }
-  };
-  
-  const prevSlide = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-      scrollToCard(currentIndex - 1);
-    }
-  };
-  
-  const scrollToCard = (index: number) => {
-    if (scrollContainerRef.current) {
-      const cardWidth = scrollContainerRef.current.offsetWidth;
-      scrollContainerRef.current.scrollTo({
-        left: index * cardWidth,
-        behavior: 'smooth'
-      });
-    }
-  };
-
   return (
     <section className="py-20 relative overflow-hidden" id="case-studies">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -117,71 +89,17 @@ const CaseStudies = () => {
           </p>
         </div>
         
-        <div className="relative">
-          <div className="hidden md:flex absolute -left-5 top-1/2 transform -translate-y-1/2 z-10">
-            <Button 
-              variant="outline" 
-              className="rounded-full h-12 w-12 p-0 bg-white/5 border border-white/10 backdrop-blur-sm text-white hover:bg-white/10"
-              onClick={prevSlide}
-              disabled={currentIndex === 0}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {caseStudies.map((caseStudy) => (
+            <motion.div
+              key={caseStudy.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, delay: caseStudy.id * 0.1 }}
             >
-              <ChevronLeft className="h-6 w-6" />
-            </Button>
-          </div>
-          
-          <div 
-            ref={scrollContainerRef}
-            className="flex md:hidden overflow-x-auto snap-x snap-mandatory space-x-6 hide-scrollbar pb-8"
-          >
-            {caseStudies.map((caseStudy, index) => (
-              <div 
-                key={caseStudy.id}
-                className="min-w-[300px] max-w-[300px] snap-center"
-              >
-                <CaseStudyCard caseStudy={caseStudy} />
-              </div>
-            ))}
-          </div>
-          
-          <div className="hidden md:grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {caseStudies.slice(currentIndex, currentIndex + 2).map((caseStudy) => (
-              <motion.div
-                key={caseStudy.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
-              >
-                <CaseStudyCard caseStudy={caseStudy} />
-              </motion.div>
-            ))}
-          </div>
-          
-          <div className="hidden md:flex absolute -right-5 top-1/2 transform -translate-y-1/2 z-10">
-            <Button 
-              variant="outline" 
-              className="rounded-full h-12 w-12 p-0 bg-white/5 border border-white/10 backdrop-blur-sm text-white hover:bg-white/10"
-              onClick={nextSlide}
-              disabled={currentIndex >= caseStudies.length - 2}
-            >
-              <ChevronRight className="h-6 w-6" />
-            </Button>
-          </div>
-        </div>
-        
-        <div className="md:hidden flex justify-center space-x-2 mt-6">
-          {caseStudies.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => {
-                setCurrentIndex(index);
-                scrollToCard(index);
-              }}
-              className={`w-2 h-2 rounded-full transition-colors ${
-                currentIndex === index ? 'bg-neon-blue' : 'bg-white/20'
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
+              <CaseStudyCard caseStudy={caseStudy} />
+            </motion.div>
           ))}
         </div>
         
