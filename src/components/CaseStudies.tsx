@@ -1,4 +1,3 @@
-
 import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
@@ -7,12 +6,12 @@ import { ChevronRight, ChevronLeft } from 'lucide-react';
 const caseStudies = [
   {
     id: 1,
-    title: "AI-Powered Customer Service Automation",
-    client: "Global E-commerce Company",
-    description: "Implemented a sophisticated AI chatbot that reduced customer service response times by 80% and improved customer satisfaction scores by 35%.",
-    results: ["80% reduction in response time", "35% increase in satisfaction", "Annual savings of $1.2M"],
-    category: "E-commerce",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+    title: "Business Analyst Agent",
+    client: "Enterprise Solutions Corp",
+    description: "Created an AI agent that understands and generates BRD and SRS from meeting transcripts. Fine-tuned using the company's previous documentation for consistent output.",
+    results: ["70% reduction in documentation time", "92% accuracy in requirement identification", "Improved stakeholder alignment by 45%"],
+    category: "Business Intelligence",
+    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 2,
