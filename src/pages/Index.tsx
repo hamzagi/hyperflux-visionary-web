@@ -32,7 +32,7 @@ const HomePage = () => {
           <HeroSection />
           <BigHeading text="Skip the Grunt Work – Focus on What Matters" />
           <HowItWorks />
-          <BigHeading text="Get a Day's Work Done Even Before Your Coffee Cools" />
+          <BigHeading text="From Tedious Tasks to Tremendous Results" />
           <WhyChooseUs />
           <BigHeading text="Automate the mundane. Accelerate the extraordinary." />
           <CaseStudies />
