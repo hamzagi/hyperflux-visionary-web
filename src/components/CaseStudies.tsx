@@ -98,10 +98,36 @@ const CaseStudies = () => {
         
         <div className="text-center mt-16">
           <p className="text-white/70 text-lg italic mb-8">And many many more...</p>
-          <Button className="btn-outline">
-            View More Case Studies
-          </Button>
         </div>
+
+        <motion.div 
+          className="mt-24 glass-card rounded-xl p-8 relative overflow-hidden"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-neon-blue/10 to-neon-purple/10 opacity-20"></div>
+          <div className="relative z-10">
+            <h3 className="text-2xl md:text-3xl font-semibold text-white text-center mb-6">
+              Our AI Agents Are In Human, But Better
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <div className="p-4">
+                <h4 className="text-neon-blue font-medium text-lg mb-2">No Rest Required</h4>
+                <p className="text-white/70">Our AI agents work 24/7/365 without breaks, vacations, or sick days. Always available when you need them.</p>
+              </div>
+              <div className="p-4">
+                <h4 className="text-neon-blue font-medium text-lg mb-2">Consistent Excellence</h4>
+                <p className="text-white/70">Unlike humans, our AI maintains peak performance all day, every day, delivering consistent quality without fatigue.</p>
+              </div>
+              <div className="p-4">
+                <h4 className="text-neon-blue font-medium text-lg mb-2">Infinitely Scalable</h4>
+                <p className="text-white/70">Handle one request or one million with the same efficiency. Scale instantly as your business grows.</p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -142,7 +168,7 @@ const CaseStudyCard = ({ caseStudy }: CaseStudyCardProps) => {
           {caseStudy.description}
         </p>
         
-        <div className="bg-white/5 rounded-lg p-4 mb-4">
+        <div className="bg-white/5 rounded-lg p-4">
           <h4 className="text-white text-sm font-medium mb-2">Key Results:</h4>
           <ul className="space-y-2">
             {caseStudy.results.map((result, index) => (
@@ -153,10 +179,6 @@ const CaseStudyCard = ({ caseStudy }: CaseStudyCardProps) => {
             ))}
           </ul>
         </div>
-        
-        <Button variant="outline" className="w-full">
-          Read Full Case Study
-        </Button>
       </div>
     </div>
   );

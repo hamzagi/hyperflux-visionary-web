@@ -49,18 +49,18 @@ const BlogSection = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
           <div className="max-w-2xl">
             <span className="px-3 py-1 text-xs rounded-full bg-white/5 border border-white/10 text-white/70 inline-block mb-4">
-              Insights & Resources
+              AI Resources
             </span>
             <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4">
-              Latest AI Insights From Our Experts
+              Explore AI Knowledge Hub
             </h2>
             <p className="text-white/70">
-              Stay updated with the latest trends, innovations, and best practices in artificial intelligence and machine learning.
+              Dive into our collection of articles, guides, and resources to better understand how AI can transform your business operations.
             </p>
           </div>
           
           <Link to="/blog" className="mt-6 md:mt-0 btn-outline inline-flex items-center justify-center">
-            View All Articles
+            View All Resources
             <ArrowRight size={16} className="ml-2" />
           </Link>
         </div>
