@@ -1,18 +1,757 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>hyperflux-visionary-web</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+    <title>HyperFlux AI - Automate Your Business Workflow</title>
+    <meta name="description" content="Automate your business workflow with HyperFlux AI" />
+    <meta name="author" content="HyperFlux" />
     <meta property="og:image" content="/og-image.png" />
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Add custom styles -->
+    <style>
+      :root {
+        --neon-blue: #4dadfe;
+        --neon-purple: #a056fe;
+      }
+      
+      body {
+        background-color: #0a0b10;
+        color: white;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      
+      .glass-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      
+      .text-gradient-blue-purple {
+        background-image: linear-gradient(to right, var(--neon-blue), var(--neon-purple));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      
+      .btn-outline {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.05);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 0.375rem;
+        display: inline-flex;
+        align-items: center;
+        transition: all 0.3s ease;
+      }
+      
+      .btn-outline:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      
+      /* Add animation classes */
+      .fade-in {
+        animation: fadeIn 0.5s ease-in-out forwards;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      
+      .perspective {
+        perspective: 800px;
+      }
+      
+      .rotate-in {
+        animation: rotateIn 0.8s ease forwards;
+        transform-origin: center;
+      }
+      
+      @keyframes rotateIn {
+        from { transform: rotateX(90deg); }
+        to { transform: rotateX(0); }
+      }
+    </style>
   </head>
 
   <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
+    <div class="min-h-screen fade-in">
+      <div class="overflow-hidden">
+        <!-- Navbar -->
+        <header class="py-4 px-4 md:px-8">
+          <div class="container mx-auto">
+            <nav class="flex justify-between items-center">
+              <a href="/" class="text-2xl font-bold text-gradient-blue-purple">HyperFlux AI</a>
+              
+              <ul class="hidden md:flex space-x-8">
+                <li><a href="#how-it-works" class="text-white/70 hover:text-white transition-colors">How It Works</a></li>
+                <li><a href="#why-us" class="text-white/70 hover:text-white transition-colors">Why Choose Us</a></li>
+                <li><a href="#case-studies" class="text-white/70 hover:text-white transition-colors">Case Studies</a></li>
+                <li><a href="#blog" class="text-white/70 hover:text-white transition-colors">Resources</a></li>
+                <li><a href="#contact" class="text-white/70 hover:text-white transition-colors">Contact</a></li>
+              </ul>
+              
+              <div class="flex items-center space-x-4">
+                <a href="#contact" class="btn-outline">Get Started</a>
+                <button class="md:hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                </button>
+              </div>
+            </nav>
+          </div>
+        </header>
+
+        <main>
+          <!-- Hero Section -->
+          <section class="py-20 md:py-32 relative overflow-hidden">
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+              <div class="absolute top-1/4 left-1/3 w-96 h-96 bg-neon-blue/5 rounded-full blur-3xl"></div>
+              <div class="absolute bottom-0 right-1/3 w-96 h-96 bg-neon-purple/5 rounded-full blur-3xl"></div>
+            </div>
+            
+            <div class="container mx-auto px-4 relative z-10">
+              <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                  Transform Your Business with <span class="text-gradient-blue-purple">AI Automation</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white/70 mb-8 max-w-3xl mx-auto">
+                  Streamline workflows, reduce manual tasks, and boost productivity with our cutting-edge AI solutions.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16">
+                  <a href="#contact" class="px-8 py-3 bg-gradient-to-r from-neon-blue to-neon-purple text-white font-medium rounded-lg hover:opacity-90 transition-opacity">
+                    Get Started
+                  </a>
+                  <a href="#how-it-works" class="px-8 py-3 bg-white/5 border border-white/10 text-white font-medium rounded-lg hover:bg-white/10 transition-colors">
+                    See How It Works
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Big Heading 1 -->
+          <section class="py-16 relative overflow-hidden">
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+              <div class="absolute top-1/3 left-1/4 w-72 h-72 bg-neon-blue/5 rounded-full blur-3xl"></div>
+              <div class="absolute bottom-1/3 right-1/4 w-72 h-72 bg-neon-purple/5 rounded-full blur-3xl"></div>
+            </div>
+            <div class="container mx-auto px-4 relative z-10">
+              <h2 class="text-3xl md:text-5xl lg:text-6xl font-semibold text-center text-white leading-tight perspective">
+                <span class="text-gradient-blue-purple inline-block rotate-in">
+                  Skip the Grunt Work – Focus on What Matters
+                </span>
+              </h2>
+            </div>
+          </section>
+
+          <!-- How It Works Section -->
+          <section id="how-it-works" class="py-20 relative overflow-hidden">
+            <div class="container mx-auto px-4 relative z-10">
+              <div class="text-center mb-16">
+                <span class="px-3 py-1 text-xs rounded-full bg-white/5 border border-white/10 text-white/70 inline-block mb-4">
+                  The Process
+                </span>
+                <h2 class="text-3xl md:text-4xl font-semibold text-white mb-6">How Our AI Solutions Work</h2>
+                <p class="text-white/70 max-w-2xl mx-auto">
+                  We've simplified the implementation process so you can start seeing results in days, not months.
+                </p>
+              </div>
+              
+              <!-- Steps would go here -->
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="glass-card p-6 rounded-xl">
+                  <div class="w-12 h-12 flex items-center justify-center bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg mb-4">
+                    1
+                  </div>
+                  <h3 class="text-xl font-medium text-white mb-3">Analyze Your Workflow</h3>
+                  <p class="text-white/70">We identify repetitive tasks and inefficiencies in your current business processes</p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="glass-card p-6 rounded-xl">
+                  <div class="w-12 h-12 flex items-center justify-center bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg mb-4">
+                    2
+                  </div>
+                  <h3 class="text-xl font-medium text-white mb-3">Custom AI Solution</h3>
+                  <p class="text-white/70">We develop a tailored AI solution that addresses your specific challenges</p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="glass-card p-6 rounded-xl">
+                  <div class="w-12 h-12 flex items-center justify-center bg-gradient-to-r from-neon-blue to-neon-purple rounded-lg mb-4">
+                    3
+                  </div>
+                  <h3 class="text-xl font-medium text-white mb-3">Implementation & Training</h3>
+                  <p class="text-white/70">We implement the solution and train your team to maximize its benefits</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Big Heading 2 -->
+          <section class="py-16 relative overflow-hidden">
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+              <div class="absolute top-1/3 left-1/4 w-72 h-72 bg-neon-blue/5 rounded-full blur-3xl"></div>
+              <div class="absolute bottom-1/3 right-1/4 w-72 h-72 bg-neon-purple/5 rounded-full blur-3xl"></div>
+            </div>
+            <div class="container mx-auto px-4 relative z-10">
+              <h2 class="text-3xl md:text-5xl lg:text-6xl font-semibold text-center text-white leading-tight perspective">
+                <span class="text-gradient-blue-purple inline-block rotate-in">
+                  From Tedious Tasks to Tremendous Results
+                </span>
+              </h2>
+            </div>
+          </section>
+
+          <!-- Why Choose Us Section -->
+          <section id="why-us" class="py-20 relative overflow-hidden">
+            <div class="container mx-auto px-4 relative z-10">
+              <div class="text-center mb-16">
+                <span class="px-3 py-1 text-xs rounded-full bg-white/5 border border-white/10 text-white/70 inline-block mb-4">
+                  Benefits
+                </span>
+                <h2 class="text-3xl md:text-4xl font-semibold text-white mb-6">Why Choose Our AI Solutions</h2>
+                <p class="text-white/70 max-w-2xl mx-auto">
+                  Our AI-powered tools are designed to deliver tangible business value through automation.
+                </p>
+              </div>
+              
+              <!-- Benefits would go here -->
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Benefit cards -->
+                <div class="glass-card p-6 rounded-xl">
+                  <div class="w-12 h-12 flex items-center justify-center bg-white/5 rounded-lg mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  </div>
+                  <h3 class="text-xl font-medium text-white mb-3">Time Savings</h3>
+                  <p class="text-white/70">Reduce time spent on repetitive tasks by up to 80%, allowing your team to focus on strategic initiatives</p>
+                </div>
+                
+                <div class="glass-card p-6 rounded-xl">
+                  <div class="w-12 h-12 flex items-center justify-center bg-white/5 rounded-lg mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.91 8.84 8.56 2.23a1.93 1.93 0 0 0-1.81 0L3.1 4.13a2.12 2.12 0 0 0-.05 3.69l12.22 6.93a2 2 0 0 0 1.94 0L21 12.51a2.12 2.12 0 0 0-.09-3.67Z"/><path d="m3.09 8.84 12.35-6.61a1.93 1.93 0 0 1 1.81 0l3.65 1.9a2.12 2.12 0 0 1 .1 3.69L8.73 14.75a2 2 0 0 1-1.94 0L3 12.51a2.12 2.12 0 0 1 .09-3.67Z"/><line x1="12" y1="22" y2="13" x2="12"/></svg>
+                  </div>
+                  <h3 class="text-xl font-medium text-white mb-3">Cost Reduction</h3>
+                  <p class="text-white/70">Significantly lower operational costs by automating manual processes and reducing human error</p>
+                </div>
+                
+                <div class="glass-card p-6 rounded-xl">
+                  <div class="w-12 h-12 flex items-center justify-center bg-white/5 rounded-lg mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></svg>
+                  </div>
+                  <h3 class="text-xl font-medium text-white mb-3">Enhanced Accuracy</h3>
+                  <p class="text-white/70">Minimize errors and inconsistencies in data processing and reporting with AI-powered automation</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Big Heading 3 -->
+          <section class="py-16 relative overflow-hidden">
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+              <div class="absolute top-1/3 left-1/4 w-72 h-72 bg-neon-blue/5 rounded-full blur-3xl"></div>
+              <div class="absolute bottom-1/3 right-1/4 w-72 h-72 bg-neon-purple/5 rounded-full blur-3xl"></div>
+            </div>
+            <div class="container mx-auto px-4 relative z-10">
+              <h2 class="text-3xl md:text-5xl lg:text-6xl font-semibold text-center text-white leading-tight perspective">
+                <span class="text-gradient-blue-purple inline-block rotate-in">
+                  Automate the mundane. Accelerate the extraordinary.
+                </span>
+              </h2>
+            </div>
+          </section>
+
+          <!-- Case Studies Section -->
+          <section id="case-studies" class="py-20 relative overflow-hidden">
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+              <div class="absolute top-1/4 right-1/4 w-72 h-72 bg-neon-blue/5 rounded-full blur-3xl"></div>
+              <div class="absolute bottom-0 left-1/3 w-80 h-80 bg-neon-purple/5 rounded-full blur-3xl"></div>
+            </div>
+            
+            <div class="container mx-auto px-4 relative z-10">
+              <div class="max-w-2xl mb-16">
+                <span class="px-3 py-1 text-xs rounded-full bg-white/5 border border-white/10 text-white/70 inline-block mb-4">
+                  Success Stories
+                </span>
+                <h2 class="text-3xl md:text-4xl font-semibold text-white mb-6">
+                  Real Results from Real Clients
+                </h2>
+                <p class="text-white/70">
+                  See how businesses like yours have transformed their operations with our AI automation solutions.
+                </p>
+              </div>
+              
+              <!-- Case studies would go here -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <!-- Case Study 1 -->
+                <div class="glass-card rounded-xl overflow-hidden">
+                  <div class="p-6">
+                    <h3 class="text-xl font-medium text-white mb-3">Manufacturing Excellence</h3>
+                    <p class="text-white/70 mb-6">
+                      A leading manufacturer reduced quality control processing time by 67% while improving defect detection by 34%.
+                    </p>
+                    <div class="flex justify-between items-center">
+                      <span class="text-neon-blue">93% ROI in 6 months</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Case Study 2 -->
+                <div class="glass-card rounded-xl overflow-hidden">
+                  <div class="p-6">
+                    <h3 class="text-xl font-medium text-white mb-3">Financial Efficiency</h3>
+                    <p class="text-white/70 mb-6">
+                      A financial services firm automated document processing, reducing processing time from days to minutes.
+                    </p>
+                    <div class="flex justify-between items-center">
+                      <span class="text-neon-blue">$1.2M annual savings</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="text-center">
+                <p class="text-white/70 text-lg">And many many more...</p>
+              </div>
+
+              <!-- AI Agents Section -->
+              <div class="mt-16 glass-card rounded-xl p-8 text-center">
+                <h3 class="text-2xl font-semibold text-white mb-4">Our AI Agents Never Sleep</h3>
+                <p class="text-white/70 text-lg max-w-3xl mx-auto">
+                  No breaks, no time off, no human limitations. Our AI works 24/7, making your business more efficient and productive while your human team focuses on creativity and innovation.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Big Heading 4 -->
+          <section class="py-16 relative overflow-hidden">
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+              <div class="absolute top-1/3 left-1/4 w-72 h-72 bg-neon-blue/5 rounded-full blur-3xl"></div>
+              <div class="absolute bottom-1/3 right-1/4 w-72 h-72 bg-neon-purple/5 rounded-full blur-3xl"></div>
+            </div>
+            <div class="container mx-auto px-4 relative z-10">
+              <h2 class="text-3xl md:text-5xl lg:text-6xl font-semibold text-center text-white leading-tight perspective">
+                <span class="text-gradient-blue-purple inline-block rotate-in">
+                  Skip the Grunt Work – Focus on What Matters
+                </span>
+              </h2>
+            </div>
+          </section>
+
+          <!-- Blog Section -->
+          <section id="blog" class="py-20 relative overflow-hidden">
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+              <div class="absolute top-1/4 right-1/4 w-72 h-72 bg-neon-blue/5 rounded-full blur-3xl"></div>
+              <div class="absolute bottom-0 left-1/3 w-80 h-80 bg-neon-purple/5 rounded-full blur-3xl"></div>
+            </div>
+            
+            <div class="container mx-auto px-4 relative z-10">
+              <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
+                <div class="max-w-2xl">
+                  <span class="px-3 py-1 text-xs rounded-full bg-white/5 border border-white/10 text-white/70 inline-block mb-4">
+                    AI Resources
+                  </span>
+                  <h2 class="text-3xl md:text-4xl font-semibold text-white mb-4">
+                    Explore AI Knowledge Hub
+                  </h2>
+                  <p class="text-white/70">
+                    Dive into our collection of articles, guides, and resources to better understand how AI can transform your business operations.
+                  </p>
+                </div>
+                
+                <a href="/blog" class="mt-6 md:mt-0 btn-outline inline-flex items-center justify-center">
+                  View All Resources
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
+              
+              <!-- Blog posts would go here -->
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <article class="glass-card rounded-xl overflow-hidden h-full hover:scale-[1.02] transition-transform">
+                  <a href="/blog/1" class="block">
+                    <div class="h-48 relative overflow-hidden">
+                      <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+                      <img 
+                        src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80"
+                        alt="The Future of Generative AI"
+                        class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                        loading="lazy"
+                      />
+                      <div class="absolute top-4 left-4 z-20">
+                        <span class="px-2 py-1 text-xs rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-white">
+                          Generative AI
+                        </span>
+                      </div>
+                    </div>
+                    
+                    <div class="p-6">
+                      <div class="flex items-center text-white/60 text-xs space-x-4 mb-3">
+                        <span class="flex items-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                          June 15, 2023
+                        </span>
+                        <span class="flex items-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                          Dr. Sarah Johnson
+                        </span>
+                      </div>
+                      
+                      <h3 class="text-xl font-medium text-white mb-3 line-clamp-2">
+                        The Future of Generative AI in Enterprise Applications
+                      </h3>
+                      
+                      <p class="text-white/70 text-sm mb-4 line-clamp-3">
+                        Explore how generative AI is transforming business operations and opening new possibilities for innovation across industries.
+                      </p>
+                      
+                      <div class="flex justify-between items-center">
+                        <span class="text-white/60 text-xs">8 min read</span>
+                        <span class="text-neon-blue text-sm font-medium flex items-center">
+                          Read More
+                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </article>
+                
+                <!-- Blog Post 2 -->
+                <article class="glass-card rounded-xl overflow-hidden h-full hover:scale-[1.02] transition-transform">
+                  <a href="/blog/2" class="block">
+                    <div class="h-48 relative overflow-hidden">
+                      <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+                      <img 
+                        src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80"
+                        alt="Implementing Computer Vision"
+                        class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                        loading="lazy"
+                      />
+                      <div class="absolute top-4 left-4 z-20">
+                        <span class="px-2 py-1 text-xs rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-white">
+                          Computer Vision
+                        </span>
+                      </div>
+                    </div>
+                    
+                    <div class="p-6">
+                      <div class="flex items-center text-white/60 text-xs space-x-4 mb-3">
+                        <span class="flex items-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                          May 23, 2023
+                        </span>
+                        <span class="flex items-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                          Michael Chen
+                        </span>
+                      </div>
+                      
+                      <h3 class="text-xl font-medium text-white mb-3 line-clamp-2">
+                        Implementing Computer Vision for Quality Control: A Case Study
+                      </h3>
+                      
+                      <p class="text-white/70 text-sm mb-4 line-clamp-3">
+                        Learn how manufacturing companies are leveraging computer vision AI to improve quality control processes and reduce defects.
+                      </p>
+                      
+                      <div class="flex justify-between items-center">
+                        <span class="text-white/60 text-xs">6 min read</span>
+                        <span class="text-neon-blue text-sm font-medium flex items-center">
+                          Read More
+                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </article>
+                
+                <!-- Blog Post 3 -->
+                <article class="glass-card rounded-xl overflow-hidden h-full hover:scale-[1.02] transition-transform">
+                  <a href="/blog/3" class="block">
+                    <div class="h-48 relative overflow-hidden">
+                      <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+                      <img 
+                        src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
+                        alt="Ethical Considerations in AI"
+                        class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                        loading="lazy"
+                      />
+                      <div class="absolute top-4 left-4 z-20">
+                        <span class="px-2 py-1 text-xs rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-white">
+                          AI Ethics
+                        </span>
+                      </div>
+                    </div>
+                    
+                    <div class="p-6">
+                      <div class="flex items-center text-white/60 text-xs space-x-4 mb-3">
+                        <span class="flex items-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                          April 10, 2023
+                        </span>
+                        <span class="flex items-center">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-1"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                          Emily Rodriguez
+                        </span>
+                      </div>
+                      
+                      <h3 class="text-xl font-medium text-white mb-3 line-clamp-2">
+                        Ethical Considerations in AI Development
+                      </h3>
+                      
+                      <p class="text-white/70 text-sm mb-4 line-clamp-3">
+                        An in-depth look at the ethical challenges and responsibilities that come with developing advanced AI systems.
+                      </p>
+                      
+                      <div class="flex justify-between items-center">
+                        <span class="text-white/60 text-xs">10 min read</span>
+                        <span class="text-neon-blue text-sm font-medium flex items-center">
+                          Read More
+                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </span>
+                      </div>
+                    </div>
+                  </a>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <!-- Big Heading 5 -->
+          <section class="py-16 relative overflow-hidden">
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+              <div class="absolute top-1/3 left-1/4 w-72 h-72 bg-neon-blue/5 rounded-full blur-3xl"></div>
+              <div class="absolute bottom-1/3 right-1/4 w-72 h-72 bg-neon-purple/5 rounded-full blur-3xl"></div>
+            </div>
+            <div class="container mx-auto px-4 relative z-10">
+              <h2 class="text-3xl md:text-5xl lg:text-6xl font-semibold text-center text-white leading-tight perspective">
+                <span class="text-gradient-blue-purple inline-block rotate-in">
+                  Let's Take You from Tedious to Tremendous
+                </span>
+              </h2>
+            </div>
+          </section>
+
+          <!-- Contact Form Section -->
+          <section id="contact" class="py-20 relative overflow-hidden">
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+              <div class="absolute top-1/4 right-1/4 w-72 h-72 bg-neon-blue/5 rounded-full blur-3xl"></div>
+              <div class="absolute bottom-0 left-1/3 w-80 h-80 bg-neon-purple/5 rounded-full blur-3xl"></div>
+            </div>
+            
+            <div class="container mx-auto px-4 relative z-10">
+              <div class="max-w-4xl mx-auto glass-card rounded-xl p-8 md:p-12">
+                <div class="text-center mb-12">
+                  <span class="px-3 py-1 text-xs rounded-full bg-white/5 border border-white/10 text-white/70 inline-block mb-4">
+                    Get Started
+                  </span>
+                  <h2 class="text-3xl md:text-4xl font-semibold text-white mb-4">
+                    Ready to Transform Your Business?
+                  </h2>
+                  <p class="text-white/70 max-w-2xl mx-auto">
+                    Fill out the form below and our team will get back to you within 24 hours to discuss how we can help.
+                  </p>
+                </div>
+                
+                <!-- Form would go here -->
+                <form class="space-y-6">
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label for="name" class="block text-white/80 mb-2 text-sm">Full Name</label>
+                      <input
+                        type="text"
+                        id="name"
+                        placeholder="John Smith"
+                        class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-neon-blue focus:border-transparent"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label for="email" class="block text-white/80 mb-2 text-sm">Email Address</label>
+                      <input
+                        type="email"
+                        id="email"
+                        placeholder="john@example.com"
+                        class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-neon-blue focus:border-transparent"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <label for="company" class="block text-white/80 mb-2 text-sm">Company Name</label>
+                    <input
+                      type="text"
+                      id="company"
+                      placeholder="Your Company"
+                      class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-neon-blue focus:border-transparent"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label for="message" class="block text-white/80 mb-2 text-sm">How can we help you?</label>
+                    <textarea
+                      id="message"
+                      rows="4"
+                      placeholder="Tell us about your business needs..."
+                      class="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white focus:outline-none focus:ring-2 focus:ring-neon-blue focus:border-transparent"
+                    ></textarea>
+                  </div>
+                  
+                  <div class="text-center">
+                    <button
+                      type="submit"
+                      class="px-8 py-3 bg-gradient-to-r from-neon-blue to-neon-purple text-white font-medium rounded-lg hover:opacity-90 transition-opacity"
+                    >
+                      Submit Request
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </section>
+
+          <!-- Call to Action -->
+          <section class="py-20 relative overflow-hidden">
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+              <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-neon-blue/5 rounded-full blur-3xl"></div>
+              <div class="absolute bottom-0 right-1/4 w-72 h-72 bg-neon-purple/5 rounded-full blur-3xl"></div>
+            </div>
+            
+            <div class="container mx-auto px-4 relative z-10">
+              <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-semibold text-white mb-6">
+                  Start Your <span class="text-gradient-blue-purple">AI Transformation</span> Today
+                </h2>
+                <p class="text-xl text-white/70 mb-8 max-w-2xl mx-auto">
+                  Join the hundreds of businesses that have revolutionized their operations with our AI solutions.
+                </p>
+                <a href="#contact" class="px-8 py-3 bg-gradient-to-r from-neon-blue to-neon-purple text-white font-medium rounded-lg hover:opacity-90 transition-opacity inline-block">
+                  Book a Demo
+                </a>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="py-12 relative overflow-hidden">
+          <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-0 left-1/4 w-72 h-72 bg-neon-blue/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-1/4 w-72 h-72 bg-neon-purple/5 rounded-full blur-3xl"></div>
+          </div>
+          
+          <div class="container mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+              <div>
+                <a href="/" class="text-2xl font-bold text-gradient-blue-purple inline-block mb-6">HyperFlux AI</a>
+                <p class="text-white/70 mb-6">
+                  Transforming businesses through intelligent automation and AI-powered solutions.
+                </p>
+                <div class="flex space-x-4">
+                  <a href="#" class="text-white/70 hover:text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                  </a>
+                  <a href="#" class="text-white/70 hover:text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                  </a>
+                  <a href="#" class="text-white/70 hover:text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                  </a>
+                  <a href="#" class="text-white/70 hover:text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                  </a>
+                </div>
+              </div>
+              
+              <div>
+                <h3 class="text-white font-medium mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                  <li><a href="#" class="text-white/70 hover:text-white transition-colors">Home</a></li>
+                  <li><a href="#how-it-works" class="text-white/70 hover:text-white transition-colors">How It Works</a></li>
+                  <li><a href="#why-us" class="text-white/70 hover:text-white transition-colors">Why Choose Us</a></li>
+                  <li><a href="#case-studies" class="text-white/70 hover:text-white transition-colors">Case Studies</a></li>
+                  <li><a href="#blog" class="text-white/70 hover:text-white transition-colors">Resources</a></li>
+                  <li><a href="#contact" class="text-white/70 hover:text-white transition-colors">Contact</a></li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 class="text-white font-medium mb-4">Solutions</h3>
+                <ul class="space-y-2">
+                  <li><a href="#" class="text-white/70 hover:text-white transition-colors">Data Processing</a></li>
+                  <li><a href="#" class="text-white/70 hover:text-white transition-colors">Document Automation</a></li>
+                  <li><a href="#" class="text-white/70 hover:text-white transition-colors">Quality Control AI</a></li>
+                  <li><a href="#" class="text-white/70 hover:text-white transition-colors">Customer Service AI</a></li>
+                  <li><a href="#" class="text-white/70 hover:text-white transition-colors">Predictive Analytics</a></li>
+                  <li><a href="#" class="text-white/70 hover:text-white transition-colors">Custom AI Solutions</a></li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 class="text-white font-medium mb-4">Contact Us</h3>
+                <ul class="space-y-4">
+                  <li class="flex items-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3 mt-1 text-white/70"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <span class="text-white/70">(555) 123-4567</span>
+                  </li>
+                  <li class="flex items-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3 mt-1 text-white/70"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    <span class="text-white/70">info@hyperfluxai.com</span>
+                  </li>
+                  <li class="flex items-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3 mt-1 text-white/70"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span class="text-white/70">123 Innovation Way<br>Tech Valley, CA 94043</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8">
+              <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-white/60 text-sm mb-4 md:mb-0">
+                  © 2023 HyperFlux AI. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                  <a href="/privacy" class="text-white/60 text-sm hover:text-white transition-colors">Privacy Policy</a>
+                  <a href="/terms" class="text-white/60 text-sm hover:text-white transition-colors">Terms of Service</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    
+    <!-- Simple animation script -->
+    <script>
+      // Simple animation on scroll
+      document.addEventListener('DOMContentLoaded', function() {
+        const animateOnScroll = function() {
+          const elements = document.querySelectorAll('.perspective');
+          
+          elements.forEach(element => {
+            const position = element.getBoundingClientRect();
+            
+            // If element is in viewport
+            if(position.top < window.innerHeight && position.bottom >= 0) {
+              element.classList.add('visible');
+            }
+          });
+        };
+        
+        // Initial check
+        animateOnScroll();
+        
+        // Check on scroll
+        window.addEventListener('scroll', animateOnScroll);
+      });
+    </script>
   </body>
 </html>
