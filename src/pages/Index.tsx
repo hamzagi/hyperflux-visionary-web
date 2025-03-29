@@ -37,7 +37,7 @@ const HomePage = () => {
           <CaseStudies />
           <BigHeading text="Skip the Grunt Work – Focus on What Matters" />
           <BlogSection />
-          <BigHeading text="Get a Day's Work Done Even Before Your Coffee Cools" />
+          <BigHeading text="Get a Day's Work Done Before Coffee Cools" />
           <CallToAction />
         </main>
         <Footer />

@@ -36,7 +36,7 @@ const BigHeading = ({ text }: BigHeadingProps) => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-center text-white leading-tight perspective-[800px] px-4 md:px-0"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-center text-white leading-tight perspective-[800px] px-4 md:px-0 whitespace-nowrap overflow-hidden text-ellipsis"
         >
           <motion.span 
             className="text-gradient-blue-purple inline-block"
