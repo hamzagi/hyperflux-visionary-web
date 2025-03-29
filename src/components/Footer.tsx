@@ -122,13 +122,13 @@ const Footer = () => {
               <li className="flex items-center">
                 <Phone size={18} className="text-neon-blue mr-3 flex-shrink-0" />
                 <span className="text-white/70 text-sm">
-                  +1 (555) 123-4567
+                  +91 9768408413
                 </span>
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="text-neon-blue mr-3 flex-shrink-0" />
                 <span className="text-white/70 text-sm">
-                  contact@hyperthoughtai.com
+                  hamza.girach@hyperthoughtai.com
                 </span>
               </li>
             </ul>

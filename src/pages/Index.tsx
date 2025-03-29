@@ -6,7 +6,6 @@ import HeroSection from '@/components/HeroSection';
 import HowItWorks from '@/components/HowItWorks';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import CaseStudies from '@/components/CaseStudies';
-import ContactForm from '@/components/ContactForm';
 import BlogSection from '@/components/BlogSection';
 import CallToAction from '@/components/CallToAction';
 import Footer from '@/components/Footer';
@@ -39,7 +38,6 @@ const HomePage = () => {
           <BigHeading text="Skip the Grunt Work – Focus on What Matters" />
           <BlogSection />
           <BigHeading text="Get a Day's Work Done Even Before Your Coffee Cools" />
-          <ContactForm />
           <CallToAction />
         </main>
         <Footer />
