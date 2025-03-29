@@ -39,33 +39,33 @@ const blogPosts = [
 
 const BlogSection = () => {
   return (
-    <section className="py-20 relative overflow-hidden" id="blog">
+    <section className="py-12 sm:py-16 md:py-20 relative overflow-hidden" id="blog">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-neon-blue/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-1/3 w-80 h-80 bg-neon-purple/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/4 right-1/4 w-48 md:w-72 h-48 md:h-72 bg-neon-blue/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-1/3 w-48 md:w-80 h-48 md:h-80 bg-neon-purple/5 rounded-full blur-3xl"></div>
       </div>
       
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-12">
           <div className="max-w-2xl">
             <span className="px-3 py-1 text-xs rounded-full bg-white/5 border border-white/10 text-white/70 inline-block mb-4">
               AI Resources
             </span>
-            <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white mb-4">
               Explore AI Knowledge Hub
             </h2>
-            <p className="text-white/70">
+            <p className="text-white/70 text-sm md:text-base">
               Dive into our collection of articles, guides, and resources to better understand how AI can transform your business operations.
             </p>
           </div>
           
-          <Link to="/blog" className="mt-6 md:mt-0 btn-outline inline-flex items-center justify-center">
+          <Link to="/blog" className="mt-6 md:mt-0 btn-outline inline-flex items-center justify-center text-sm md:text-base">
             View All Resources
             <ArrowRight size={16} className="ml-2" />
           </Link>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {blogPosts.map((post, index) => (
             <motion.article
               key={post.id}
@@ -76,7 +76,7 @@ const BlogSection = () => {
               className="glass-card rounded-xl overflow-hidden h-full hover:scale-[1.02] transition-transform"
             >
               <Link to={`/blog/${post.id}`} className="block">
-                <div className="h-48 relative overflow-hidden">
+                <div className="h-40 sm:h-48 relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
                   <img 
                     src={post.image}
@@ -91,7 +91,7 @@ const BlogSection = () => {
                   </div>
                 </div>
                 
-                <div className="p-6">
+                <div className="p-4 sm:p-6">
                   <div className="flex items-center text-white/60 text-xs space-x-4 mb-3">
                     <span className="flex items-center">
                       <Calendar size={12} className="mr-1" />
@@ -103,11 +103,11 @@ const BlogSection = () => {
                     </span>
                   </div>
                   
-                  <h3 className="text-xl font-medium text-white mb-3 line-clamp-2">
+                  <h3 className="text-lg md:text-xl font-medium text-white mb-3 line-clamp-2">
                     {post.title}
                   </h3>
                   
-                  <p className="text-white/70 text-sm mb-4 line-clamp-3">
+                  <p className="text-white/70 text-xs sm:text-sm mb-4 line-clamp-3">
                     {post.excerpt}
                   </p>
                   

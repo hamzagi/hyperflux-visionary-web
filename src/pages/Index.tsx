@@ -24,11 +24,11 @@ const HomePage = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="relative min-h-screen"
+      className="relative min-h-screen w-full"
     >
-      <div className="overflow-hidden">
+      <div className="overflow-hidden w-full">
         <Navbar />
-        <main>
+        <main className="w-full">
           <HeroSection />
           <BigHeading text="Skip the Grunt Work – Focus on What Matters" />
           <HowItWorks />

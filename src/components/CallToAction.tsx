@@ -30,7 +30,7 @@ const CallToAction = () => {
   };
 
   return (
-    <section className="py-20 relative overflow-hidden bg-gradient-to-b from-background to-muted">
+    <section className="py-12 sm:py-16 md:py-20 relative overflow-hidden bg-gradient-to-b from-background to-muted">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div 
           className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 to-secondary/5 opacity-30"
@@ -41,7 +41,7 @@ const CallToAction = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[200%] h-[200%] bg-[radial-gradient(circle,_rgba(20,_20,_40,_0.8)_0%,_transparent_60%)]"></div>
       </div>
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -55,13 +55,13 @@ const CallToAction = () => {
             animate="animate"
             variants={zapVariants}
           >
-            <div className="w-12 h-12 rounded-full glass-card flex items-center justify-center">
-              <Zap size={24} className="text-primary" />
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full glass-card flex items-center justify-center">
+              <Zap size={20} className="text-primary sm:size-24" />
             </div>
           </motion.div>
           
           <motion.h2 
-            className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-6 leading-tight"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-4 sm:mb-6 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
@@ -86,11 +86,13 @@ const CallToAction = () => {
             >
               Ready to Supercharge Your Business 
             </motion.span>
-            <br />with Custom AI Solutions?
+            <br className="hidden sm:block" />
+            <span className="sm:hidden"> </span>
+            with Custom AI Solutions?
           </motion.h2>
           
           <motion.p 
-            className="text-white/70 text-lg mb-10 max-w-2xl mx-auto"
+            className="text-white/70 text-sm md:text-lg mb-6 sm:mb-10 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
@@ -104,9 +106,10 @@ const CallToAction = () => {
               variants={btnHoverVariants}
               initial="initial"
               whileHover="hover"
+              className="w-full sm:w-auto"
             >
               <Button 
-                className="btn-primary text-base px-8 py-3 relative overflow-hidden group"
+                className="btn-primary text-sm md:text-base px-6 md:px-8 py-2 md:py-3 relative overflow-hidden group w-full sm:w-auto"
                 onClick={() => window.open('https://calendly.com/hyperthoughtai', '_blank')}
               >
                 <motion.span
@@ -121,7 +124,7 @@ const CallToAction = () => {
                   whileHover={{ x: 5 }}
                   transition={{ duration: 0.3, type: "spring" }}
                 >
-                  <ArrowRight size={18} className="ml-2" />
+                  <ArrowRight size={16} className="ml-2" />
                 </motion.div>
               </Button>
             </motion.div>
@@ -130,8 +133,9 @@ const CallToAction = () => {
               variants={btnHoverVariants}
               initial="initial"
               whileHover="hover"
+              className="w-full sm:w-auto"
             >
-              <Button className="btn-secondary text-base px-8 py-3 relative overflow-hidden group">
+              <Button className="btn-secondary text-sm md:text-base px-6 md:px-8 py-2 md:py-3 relative overflow-hidden group w-full sm:w-auto">
                 <motion.span
                   className="absolute inset-0 bg-gradient-to-r from-neon-purple/30 to-neon-blue/30 opacity-0 group-hover:opacity-20 transition-opacity duration-500"
                   initial={{ x: '-100%' }}
