@@ -1,0 +1,25 @@
+
+import { motion } from "framer-motion";
+
+const VideoSection = () => {
+  return (
+    <section className="py-16 relative z-10">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="w-full max-w-4xl mx-auto aspect-video bg-black/20 rounded-xl overflow-hidden glass-card"
+        >
+          {/* Video placeholder - Add your video element here */}
+          <div className="w-full h-full flex items-center justify-center text-white/60">
+            Video Content Here
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default VideoSection;

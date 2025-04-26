@@ -1,15 +1,14 @@
-
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import HowItWorks from '@/components/HowItWorks';
 import WhyChooseUs from '@/components/WhyChooseUs';
-import CaseStudies from '@/components/CaseStudies';
 import BlogSection from '@/components/BlogSection';
 import CallToAction from '@/components/CallToAction';
 import Footer from '@/components/Footer';
 import BigHeading from '@/components/BigHeading';
+import VideoSection from '@/components/VideoSection';
 
 const HomePage = () => {
   useEffect(() => {
@@ -29,13 +28,12 @@ const HomePage = () => {
         <Navbar />
         <main className="w-full">
           <HeroSection />
+          <VideoSection />
           <BigHeading text="Skip the Grunt Work – Focus on What Matters" />
           <HowItWorks />
           <BigHeading text="From Tedious Tasks to Tremendous Results" />
           <WhyChooseUs />
           <BigHeading text="Automate the mundane. Accelerate the extraordinary." />
-          <CaseStudies />
-          <BigHeading text="Skip the Grunt Work – Focus on What Matters" />
           <BlogSection />
           <BigHeading text="Get a Day's Work Done Before Coffee Cools" />
           <CallToAction />
