@@ -1,7 +1,13 @@
 
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Calendar } from "lucide-react";
 
 const VideoSection = () => {
+  const handleBookCall = () => {
+    window.open('https://calendly.com/hyperthoughtai', '_blank');
+  };
+
   return (
     <section className="py-16 relative z-10">
       <div className="container mx-auto px-4">
@@ -17,9 +23,20 @@ const VideoSection = () => {
             Video Content Here
           </div>
         </motion.div>
+        
+        <div className="flex justify-center mt-8">
+          <Button 
+            onClick={handleBookCall}
+            className="btn-primary flex items-center gap-2"
+          >
+            <Calendar size={16} />
+            Book a Call
+          </Button>
+        </div>
       </div>
     </section>
   );
 };
 
 export default VideoSection;
+
