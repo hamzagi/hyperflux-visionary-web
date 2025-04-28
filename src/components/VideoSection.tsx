@@ -16,12 +16,17 @@ const VideoSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="w-full max-w-4xl mx-auto aspect-video bg-black/20 rounded-xl overflow-hidden glass-card"
+          className="w-full max-w-4xl mx-auto aspect-video bg-black rounded-xl overflow-hidden glass-card"
         >
-          {/* Video placeholder - Add your video element here */}
-          <div className="w-full h-full flex items-center justify-center text-white/60">
-            Video Content Here
-          </div>
+          <video 
+            controls
+            width="100%" 
+            height="100%" 
+            className="w-full h-full object-cover"
+          >
+            <source src="/Video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </motion.div>
         
         <div className="flex justify-center mt-8">
@@ -39,4 +44,3 @@ const VideoSection = () => {
 };
 
 export default VideoSection;
-
