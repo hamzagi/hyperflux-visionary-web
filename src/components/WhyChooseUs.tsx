@@ -45,7 +45,19 @@ const WhyChooseUs = () => (
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: i * 0.1 }}
             viewport={{ once: true }}
-            className="glass-card rounded-xl p-6 flex flex-col items-center text-center"
+            className="glass-card rounded-xl p-6 flex flex-col items-center text-center card-3d hover-glow-3d cursor-pointer"
+            style={{ 
+              transformStyle: 'preserve-3d',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'perspective(800px) rotateY(-5deg) translateY(-10px) translateZ(20px)';
+              e.currentTarget.style.boxShadow = '0 20px 40px rgba(30, 174, 219, 0.3)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'perspective(800px) rotateY(0deg) translateY(0px) translateZ(0px)';
+              e.currentTarget.style.boxShadow = 'none';
+            }}
           >
             <span className="flex items-center justify-center bg-primary/20 text-primary rounded-full w-14 h-14 mb-4">
               <Icon size={28} />

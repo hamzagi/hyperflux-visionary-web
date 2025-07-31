@@ -1,0 +1,20 @@
+{
+  "glyphs": {},
+  "familyName": "Inter",
+  "ascender": 1069,
+  "descender": -293,
+  "underlinePosition": -180,
+  "underlineThickness": 50,
+  "boundingBox": {
+    "yMin": -293,
+    "yMax": 1069
+  },
+  "original_font_information": {
+    "format": 0,
+    "copyright": "Copyright 2020 The Inter Project Authors (https://github.com/rsms/inter)",
+    "fontFamily": "Inter",
+    "fontSubfamily": "Bold"
+  },
+  "cssFontWeight": "bold",
+  "cssFontStyle": "normal"
+}

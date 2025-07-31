@@ -36,7 +36,8 @@ const BigHeading = ({ text }: BigHeadingProps) => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-center text-white leading-tight perspective-[800px] px-4 md:px-0 whitespace-nowrap overflow-hidden text-ellipsis"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-center text-white leading-tight perspective-[800px] px-4 md:px-0"
+          style={{ perspective: '800px', transformStyle: 'preserve-3d' }}
         >
           <motion.span 
             className="text-gradient-blue-purple inline-block"
@@ -57,7 +58,17 @@ const BigHeading = ({ text }: BigHeadingProps) => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="inline-block transform hover:scale-110 hover:text-neon-purple transition-all duration-300"
+                className="inline-block transform hover:scale-110 hover:text-neon-purple transition-all duration-300 cursor-pointer"
+                style={{ 
+                  transformStyle: 'preserve-3d',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'perspective(400px) rotateY(10deg) scale(1.1)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'perspective(400px) rotateY(0deg) scale(1)';
+                }}
               >
                 {char === " " ? "\u00A0" : char}
               </motion.span>

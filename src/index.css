@@ -159,26 +159,122 @@
     background-position: 100% center;
   }
   
-  /* Perspective utilities for 3D transforms */
+  /* Enhanced Perspective utilities for 3D transforms */
   .perspective-400 {
     perspective: 400px;
   }
-  
+
   .perspective-800 {
     perspective: 800px;
   }
-  
+
   .perspective-1200 {
     perspective: 1200px;
   }
-  
+
+  .perspective-2000 {
+    perspective: 2000px;
+  }
+
   /* Transform utilities */
   .backface-hidden {
     backface-visibility: hidden;
   }
-  
+
   .transform-style-3d {
     transform-style: preserve-3d;
+  }
+
+  /* 3D Card Effects */
+  .card-3d {
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+  }
+
+  .card-3d:hover {
+    transform: perspective(800px) rotateY(-5deg) translateY(-10px);
+  }
+
+  /* 3D Button Effects */
+  .btn-3d {
+    transform-style: preserve-3d;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .btn-3d::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    transform: translateZ(-4px);
+    border-radius: inherit;
+    filter: brightness(0.8);
+    z-index: -1;
+  }
+
+  .btn-3d:hover {
+    transform: perspective(400px) rotateX(-5deg) translateY(-2px);
+  }
+
+  .btn-3d:active {
+    transform: perspective(400px) rotateX(-5deg) translateY(0px) translateZ(-2px);
+  }
+
+  /* Parallax Layers */
+  .parallax-layer {
+    transform-style: preserve-3d;
+  }
+
+  /* 3D Text Effects */
+  .text-3d {
+    text-shadow: 
+      0 1px 0 #1a1a1a,
+      0 2px 0 #0f0f0f,
+      0 3px 0 #050505,
+      0 4px 8px rgba(0,0,0,.6),
+      0 8px 16px rgba(0,0,0,.3);
+    transform: perspective(400px) rotateX(15deg);
+  }
+
+  /* Floating 3D Elements */
+  .float-3d {
+    animation: float3d 6s ease-in-out infinite;
+  }
+
+  @keyframes float3d {
+    0%, 100% { 
+      transform: perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0px); 
+    }
+    25% { 
+      transform: perspective(800px) rotateX(5deg) rotateY(10deg) translateY(-10px); 
+    }
+    50% { 
+      transform: perspective(800px) rotateX(0deg) rotateY(0deg) translateY(-20px); 
+    }
+    75% { 
+      transform: perspective(800px) rotateX(-5deg) rotateY(-10deg) translateY(-10px); 
+    }
+  }
+
+  /* Depth Layers */
+  .depth-1 { transform: translateZ(10px); }
+  .depth-2 { transform: translateZ(20px); }
+  .depth-3 { transform: translateZ(30px); }
+  .depth-4 { transform: translateZ(40px); }
+  .depth-5 { transform: translateZ(50px); }
+
+  /* 3D Hover Glow */
+  .hover-glow-3d {
+    transition: all 0.3s ease;
+  }
+
+  .hover-glow-3d:hover {
+    transform: perspective(800px) translateZ(20px);
+    filter: drop-shadow(0 20px 30px rgba(30, 174, 219, 0.4));
   }
   
   /* Hover effect utilities */
