@@ -1,6 +1,5 @@
 import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { Box, RoundedBox } from '@react-three/drei';
 import * as THREE from 'three';
 
 export const HeroCube = () => {
@@ -40,13 +39,8 @@ export const HeroCube = () => {
   return (
     <group position={[3, 0, 0]}>
       {/* Main central cube */}
-      <RoundedBox
-        ref={mainCube}
-        args={[2, 2, 2]}
-        radius={0.1}
-        smoothness={4}
-        position={[0, 0, 0]}
-      >
+      <mesh ref={mainCube} position={[0, 0, 0]}>
+        <boxGeometry args={[2, 2, 2]} />
         <meshStandardMaterial
           color="#1EAEDB"
           transparent
@@ -56,14 +50,11 @@ export const HeroCube = () => {
           emissive="#1EAEDB"
           emissiveIntensity={0.1}
         />
-      </RoundedBox>
+      </mesh>
       
       {/* Orbiting smaller cubes */}
-      <Box
-        ref={cube1}
-        args={[0.8, 0.8, 0.8]}
-        position={[3, 1, 0]}
-      >
+      <mesh ref={cube1} position={[3, 1, 0]}>
+        <boxGeometry args={[0.8, 0.8, 0.8]} />
         <meshStandardMaterial
           color="#9D50FF"
           transparent
@@ -73,13 +64,10 @@ export const HeroCube = () => {
           emissive="#9D50FF"
           emissiveIntensity={0.05}
         />
-      </Box>
+      </mesh>
       
-      <Box
-        ref={cube2}
-        args={[0.6, 0.6, 0.6]}
-        position={[-2, 0, 2]}
-      >
+      <mesh ref={cube2} position={[-2, 0, 2]}>
+        <boxGeometry args={[0.6, 0.6, 0.6]} />
         <meshStandardMaterial
           color="#33C3F0"
           transparent
@@ -89,13 +77,10 @@ export const HeroCube = () => {
           emissive="#33C3F0"
           emissiveIntensity={0.08}
         />
-      </Box>
+      </mesh>
       
-      <Box
-        ref={cube3}
-        args={[1, 1, 1]}
-        position={[1, -2, -1]}
-      >
+      <mesh ref={cube3} position={[1, -2, -1]}>
+        <boxGeometry args={[1, 1, 1]} />
         <meshStandardMaterial
           color="#1EAEDB"
           transparent
@@ -105,7 +90,7 @@ export const HeroCube = () => {
           emissive="#1EAEDB"
           emissiveIntensity={0.12}
         />
-      </Box>
+      </mesh>
     </group>
   );
 };

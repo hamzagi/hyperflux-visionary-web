@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { Scene3D } from './3d/Scene3D';
-import { Interactive3DCard } from './3d/Interactive3DCard';
 
 const CaseStudies3D = () => {
   const caseStudies = [
@@ -28,19 +27,7 @@ const CaseStudies3D = () => {
     <section className="py-20 relative overflow-hidden">
       {/* 3D Background */}
       <div className="absolute inset-0 h-full">
-        <Scene3D cameraPosition={[0, 0, 8]}>
-          {caseStudies.map((study, index) => (
-            <Interactive3DCard
-              key={index}
-              title={study.title}
-              description={study.description}
-              position={[(index - 1) * 4, 0, -2]}
-              color={study.color}
-              onHover={() => console.log(`Hovered: ${study.title}`)}
-              onClick={() => console.log(`Clicked: ${study.title}`)}
-            />
-          ))}
-        </Scene3D>
+        <Scene3D cameraPosition={[0, 0, 8]} />
       </div>
       
       {/* 2D Overlay Content */}

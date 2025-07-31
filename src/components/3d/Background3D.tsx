@@ -1,6 +1,5 @@
 import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { Sphere, MeshDistortMaterial } from '@react-three/drei';
 import * as THREE from 'three';
 
 export const Background3D = () => {
@@ -46,39 +45,36 @@ export const Background3D = () => {
       <pointLight position={[20, 20, 20]} intensity={0.8} color="#1EAEDB" />
       <pointLight position={[-20, -20, -20]} intensity={0.6} color="#9D50FF" />
       
-      {/* Background spheres with distortion */}
-      <Sphere ref={sphere1} args={[3, 64, 64]} position={[8, 5, -10]}>
-        <MeshDistortMaterial
+      {/* Background spheres */}
+      <mesh ref={sphere1} position={[8, 5, -10]}>
+        <sphereGeometry args={[3, 32, 32]} />
+        <meshStandardMaterial
           color="#1EAEDB"
           transparent
           opacity={0.1}
-          distort={0.3}
-          speed={2}
           roughness={0.8}
         />
-      </Sphere>
+      </mesh>
       
-      <Sphere ref={sphere2} args={[4, 64, 64]} position={[-12, 8, -15]}>
-        <MeshDistortMaterial
+      <mesh ref={sphere2} position={[-12, 8, -15]}>
+        <sphereGeometry args={[4, 32, 32]} />
+        <meshStandardMaterial
           color="#9D50FF"
           transparent
           opacity={0.08}
-          distort={0.4}
-          speed={1.5}
           roughness={0.9}
         />
-      </Sphere>
+      </mesh>
       
-      <Sphere ref={sphere3} args={[2.5, 64, 64]} position={[6, -4, -20]}>
-        <MeshDistortMaterial
+      <mesh ref={sphere3} position={[6, -4, -20]}>
+        <sphereGeometry args={[2.5, 32, 32]} />
+        <meshStandardMaterial
           color="#33C3F0"
           transparent
           opacity={0.06}
-          distort={0.5}
-          speed={3}
           roughness={0.7}
         />
-      </Sphere>
+      </mesh>
     </>
   );
 };
