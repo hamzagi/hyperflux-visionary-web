@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight, Search, Lightbulb, Code, CheckCircle } from 'lucide-react';
-import * as anime from 'animejs';
+import anime from 'animejs';
 
 const steps = [
   {
