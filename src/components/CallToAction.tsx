@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Zap } from 'lucide-react';
+// @ts-ignore
 import anime from 'animejs';
 
 const CallToAction = () => {

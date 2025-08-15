@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { ArrowRight, BrainCircuit } from 'lucide-react';
+// @ts-ignore
 import anime from 'animejs';
 
 const HeroSection = () => {

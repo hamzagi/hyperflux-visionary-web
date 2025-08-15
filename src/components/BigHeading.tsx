@@ -1,6 +1,7 @@
 
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+// @ts-ignore
 import anime from 'animejs';
 
 interface BigHeadingProps {

@@ -2,6 +2,7 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight, Search, Lightbulb, Code, CheckCircle } from 'lucide-react';
+// @ts-ignore
 import anime from 'animejs';
 
 const steps = [
