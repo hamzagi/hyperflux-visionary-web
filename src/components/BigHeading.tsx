@@ -1,27 +1,60 @@
 
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import anime from 'animejs/lib/anime.es.js';
 
 interface BigHeadingProps {
   text: string;
 }
 
 const BigHeading = ({ text }: BigHeadingProps) => {
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const charsRef = useRef<HTMLSpanElement[]>([]);
+
   // Split text into individual characters for letter animation
   const characters = Array.from(text);
-  
-  // Character animation variants
-  const letterVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.04,
-        duration: 0.5,
-        ease: [0.2, 0.65, 0.3, 0.9],
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && headingRef.current) {
+            // Wave animation for characters
+            anime({
+              targets: charsRef.current,
+              translateY: [30, 0],
+              opacity: [0, 1],
+              scale: [0.3, 1],
+              duration: 600,
+              delay: anime.stagger(40),
+              easing: 'easeOutBack'
+            });
+
+            // Background glow animation
+            anime({
+              targets: headingRef.current,
+              textShadow: [
+                '0 0 0px rgba(30, 174, 219, 0)',
+                '0 0 20px rgba(30, 174, 219, 0.8)',
+                '0 0 40px rgba(157, 80, 255, 0.6)',
+                '0 0 20px rgba(30, 174, 219, 0.8)'
+              ],
+              duration: 2000,
+              delay: 800,
+              easing: 'easeInOutQuad'
+            });
+          }
+        });
       },
-    }),
-  };
+      { threshold: 0.5 }
+    );
+
+    if (headingRef.current) {
+      observer.observe(headingRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section className="py-12 md:py-16 relative overflow-hidden">
@@ -31,50 +64,46 @@ const BigHeading = ({ text }: BigHeadingProps) => {
       </div>
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <motion.h2 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
+        <h2 
+          ref={headingRef}
           className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-center text-white leading-tight perspective-[800px] px-4 md:px-0"
           style={{ perspective: '800px', transformStyle: 'preserve-3d' }}
         >
-          <motion.span 
-            className="text-gradient-blue-purple inline-block"
-            initial={{ rotateX: 90 }}
-            whileInView={{ rotateX: 0 }}
-            transition={{ 
-              duration: 0.8, 
-              ease: [0.16, 1, 0.3, 1],
-              delay: 0.2 
-            }}
-            viewport={{ once: true }}
-          >
+          <span className="text-gradient-blue-purple inline-block">
             {characters.map((char, index) => (
-              <motion.span
+              <span
                 key={`${char}-${index}`}
-                custom={index}
-                variants={letterVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                className="inline-block transform hover:scale-110 hover:text-neon-purple transition-all duration-300 cursor-pointer"
+                ref={(el) => { if (el) charsRef.current[index] = el; }}
+                className="inline-block transform cursor-pointer"
                 style={{ 
+                  opacity: 0,
                   transformStyle: 'preserve-3d',
                   transition: 'all 0.3s ease'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'perspective(400px) rotateY(10deg) scale(1.1)';
+                  anime({
+                    targets: e.currentTarget,
+                    scale: 1.2,
+                    rotateY: 15,
+                    duration: 300,
+                    easing: 'easeOutBack'
+                  });
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'perspective(400px) rotateY(0deg) scale(1)';
+                  anime({
+                    targets: e.currentTarget,
+                    scale: 1,
+                    rotateY: 0,
+                    duration: 300,
+                    easing: 'easeOutBack'
+                  });
                 }}
               >
                 {char === " " ? "\u00A0" : char}
-              </motion.span>
+              </span>
             ))}
-          </motion.span>
-        </motion.h2>
+          </span>
+        </h2>
       </div>
     </section>
   );

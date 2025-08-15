@@ -1,25 +1,98 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { ArrowRight, BrainCircuit } from 'lucide-react';
+import anime from 'animejs/lib/anime.es.js';
 
 const HeroSection = () => {
   const [taglineIndex, setTaglineIndex] = useState(0);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const taglineRef = useRef<HTMLDivElement>(null);
+  const buttonsRef = useRef<HTMLDivElement>(null);
+  const logoGridRef = useRef<HTMLDivElement>(null);
+  
   const taglines = [
     "Get a day's work done before your coffee cools.",
     "Your AI-powered future starts now.",
     "Custom AI solutions for real-world problems."
   ];
   
-  // Switch taglines every 5 seconds
+  // Initialize anime.js animations on mount
+  useEffect(() => {
+    // Title animation with staggered letters
+    if (titleRef.current) {
+      anime({
+        targets: titleRef.current.querySelectorAll('.title-char'),
+        translateY: [50, 0],
+        opacity: [0, 1],
+        duration: 800,
+        delay: anime.stagger(50),
+        easing: 'easeOutExpo'
+      });
+    }
+
+    // Buttons entrance animation
+    if (buttonsRef.current) {
+      anime({
+        targets: buttonsRef.current.children,
+        translateY: [30, 0],
+        opacity: [0, 1],
+        duration: 600,
+        delay: anime.stagger(100, { start: 1000 }),
+        easing: 'easeOutBack'
+      });
+    }
+
+    // Logo grid animation
+    if (logoGridRef.current) {
+      anime({
+        targets: logoGridRef.current.children,
+        scale: [0, 1],
+        opacity: [0, 1],
+        duration: 400,
+        delay: anime.stagger(80, { start: 1500 }),
+        easing: 'easeOutBack'
+      });
+    }
+  }, []);
+
+  // Tagline change animation
   useEffect(() => {
     const interval = setInterval(() => {
-      setTaglineIndex((prevIndex) => (prevIndex + 1) % taglines.length);
+      if (taglineRef.current) {
+        // Animate out current tagline
+        anime({
+          targets: taglineRef.current,
+          translateY: -20,
+          opacity: 0,
+          duration: 300,
+          easing: 'easeInQuad',
+          complete: () => {
+            setTaglineIndex((prevIndex) => (prevIndex + 1) % taglines.length);
+            // Animate in new tagline
+            anime({
+              targets: taglineRef.current,
+              translateY: [20, 0],
+              opacity: [0, 1],
+              duration: 500,
+              easing: 'easeOutQuad'
+            });
+          }
+        });
+      }
     }, 5000);
     
     return () => clearInterval(interval);
   }, []);
+
+  // Split title into characters for animation
+  const titleText = "Revolutionize Your Business with AI-Powered Solutions";
+  const titleChars = titleText.split('').map((char, index) => (
+    <span key={index} className="title-char inline-block" style={{ opacity: 0 }}>
+      {char === ' ' ? '\u00A0' : char}
+    </span>
+  ));
 
   return (
     <section className="relative min-h-screen flex items-center pt-28 pb-20 overflow-hidden">
@@ -54,35 +127,27 @@ const HeroSection = () => {
             </span>
           </motion.div>
           
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+          <h1 
+            ref={titleRef}
             className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-white leading-tight mb-6"
           >
-            Revolutionize Your Business with{' '}
-            <span className="relative inline-block text-primary">
-              AI-Powered
+            {titleChars.slice(0, 41)}
+            <span className="relative inline-block text-primary ml-2">
+              {titleChars.slice(41, 52)}
               <div className="absolute -inset-1 bg-primary opacity-20 blur-lg rounded-lg -z-10"></div>
-            </span>{' '}
-            Solutions
-          </motion.h1>
+            </span>
+            {titleChars.slice(52)}
+          </h1>
           
-          <motion.div
-            key={taglineIndex}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.6 }}
+          <div
+            ref={taglineRef}
             className="text-xl md:text-2xl text-white/80 mb-10 h-16 flex items-center justify-center"
           >
             {taglines[taglineIndex]}
-          </motion.div>
+          </div>
           
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
+          <div 
+            ref={buttonsRef}
             className="flex flex-col sm:flex-row gap-4"
           >
             <Button 
@@ -95,16 +160,11 @@ const HeroSection = () => {
             <Button className="btn-secondary text-base px-8 py-3">
               Explore Solutions
             </Button>
-          </motion.div>
+          </div>
           
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.7 }}
-            className="mt-16 md:mt-20"
-          >
+          <div className="mt-16 md:mt-20">
             <p className="text-white/60 text-sm mb-4">Trusted by innovative companies</p>
-            <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+            <div ref={logoGridRef} className="flex flex-wrap justify-center gap-8 md:gap-12">
               <div className="h-8 w-auto opacity-60 hover:opacity-100 transition-opacity duration-300">
                 <svg viewBox="0 0 100 30" className="h-full w-auto fill-current text-white">
                   <rect x="5" y="5" width="20" height="20" rx="5" />
@@ -131,7 +191,7 @@ const HeroSection = () => {
                 </svg>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
       
