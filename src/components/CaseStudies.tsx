@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 // @ts-ignore
-import anime from 'animejs';
+const anime = require('animejs');
 
 const CaseStudies = () => {
   const sectionRef = useRef<HTMLElement>(null);
