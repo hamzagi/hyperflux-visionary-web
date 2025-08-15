@@ -1,7 +1,7 @@
 
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import anime from 'animejs/lib/anime.es.js';
+import * as anime from 'animejs';
 
 interface BigHeadingProps {
   text: string;

@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Zap } from 'lucide-react';
-import anime from 'animejs/lib/anime.es.js';
+import * as anime from 'animejs';
 
 const CallToAction = () => {
   const sectionRef = useRef<HTMLElement>(null);

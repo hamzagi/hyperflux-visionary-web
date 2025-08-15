@@ -1,7 +1,7 @@
 
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import anime from 'animejs/lib/anime.es.js';
+import * as anime from 'animejs';
 
 const CaseStudies = () => {
   const sectionRef = useRef<HTMLElement>(null);

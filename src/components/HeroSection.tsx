@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { ArrowRight, BrainCircuit } from 'lucide-react';
-import anime from 'animejs/lib/anime.es.js';
+import * as anime from 'animejs';
 
 const HeroSection = () => {
   const [taglineIndex, setTaglineIndex] = useState(0);
